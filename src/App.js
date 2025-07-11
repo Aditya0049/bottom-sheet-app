@@ -45,15 +45,24 @@ function App() {
   };
 
   useEffect(() => {
+  const handleKey = (e) => {
+    if (e.key === 'ArrowUp') animateToSnap(SNAP_POINTS.FULL);
+    else if (e.key === 'ArrowDown') animateToSnap(SNAP_POINTS.CLOSED);
+    else if (e.key === ' ') animateToSnap(SNAP_POINTS.HALF);
+  };
+
+  // Timeout ensures animation hook is mounted before triggering
+  const timeout = setTimeout(() => {
     animateToSnap(SNAP_POINTS.CLOSED);
-    const handleKey = (e) => {
-      if (e.key === 'ArrowUp') animateToSnap(SNAP_POINTS.FULL);
-      else if (e.key === 'ArrowDown') animateToSnap(SNAP_POINTS.CLOSED);
-      else if (e.key === ' ') animateToSnap(SNAP_POINTS.HALF);
-    };
     window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, []);
+  }, 100); // 100ms is usually safe
+
+  return () => {
+    clearTimeout(timeout);
+    window.removeEventListener('keydown', handleKey);
+  };
+}, []);
+
 
   return (
     <div className="App">
