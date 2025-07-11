@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bottom-sheet-app/static/css/main.b2e7296b.css",
-    "main.js": "/bottom-sheet-app/static/js/main.3da13b9e.js",
+    "main.js": "/bottom-sheet-app/static/js/main.750dec2b.js",
     "index.html": "/bottom-sheet-app/index.html",
     "main.b2e7296b.css.map": "/bottom-sheet-app/static/css/main.b2e7296b.css.map",
-    "main.3da13b9e.js.map": "/bottom-sheet-app/static/js/main.3da13b9e.js.map"
+    "main.750dec2b.js.map": "/bottom-sheet-app/static/js/main.750dec2b.js.map"
   },
   "entrypoints": [
     "static/css/main.b2e7296b.css",
-    "static/js/main.3da13b9e.js"
+    "static/js/main.750dec2b.js"
   ]
 }
